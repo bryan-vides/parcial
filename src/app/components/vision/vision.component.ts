@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { BlogService } from 'src/service/blog.service';
+
 
 @Component({
   selector: 'app-vision',
@@ -8,20 +8,20 @@ import { BlogService } from 'src/service/blog.service';
 })
 export class VisionComponent {
   
-  vision: any;
+  vision = {
+    titulo: 'Visión',
+    texto: 'Queremos ser la principal plataforma de compraventa de videojuegos de consolas para coleccionistas. Deseamos expandir nuestra presencia en el mercado y establecernos como una fuente confiable de videojuegos de alta calidad a precios más accesibles, y si es necesario, restaurados. Aspiramos a proporcionar a nuestros clientes una experiencia de compra satisfactoria y un servicio excepcional.'
+};
 
-  constructor(private bs: BlogService){
-
-  }
-
-  ngOnInit(): void {
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
-    this.bs.getVision().subscribe(
-      data => {
-        this.vision = data;
-      }
-    );
+  
+  // ngOnInit(): void {
+  //   //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+  //   //Add 'implements OnInit' to the class.
+  //   this.bs.getVision().subscribe(
+  //     data => {
+  //       this.vision = data;
+  //     }
+  //   );
     
-  }
+  // }
 }

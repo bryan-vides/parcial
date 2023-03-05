@@ -1,5 +1,10 @@
-<div class="productos" *ngFor="let producto of tienda.productos">
-    <img [src]="producto.imagen">
-    <h3>{{producto.nombre}}</h3>
-    <p>{{producto.precio}}</p>
+<div class="product-card" *ngFor="let producto of tienda.productos">
+  <div class="product-image" [style.background-image]="'url(' + producto.imagen + ')'" (click)="buscarEnGoogle(producto.nombre)"></div>
+  <div class="product-details">
+    <h3 class="product-title">{{producto.nombre}}</h3>
+    <p class="product-description">{{producto.consola}}</p>
+    <p class="product-console">{{producto.descripcion}}</p>
+    <p class="product-price">Q. {{producto.precio}}</p>
   </div>
+</div>
+
